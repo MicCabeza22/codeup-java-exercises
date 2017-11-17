@@ -12,9 +12,7 @@ public class ConsoleExercises {
 
         System.out.println("Your integer is: " + userInput);
 
-        String firstWord;
-        String secondWord;
-        String thirdWord;
+        String firstWord, secondWord, thirdWord;
 
 //      Get three words from a user and print them to the console.
         System.out.print("Enter three words: ");
@@ -36,19 +34,14 @@ public class ConsoleExercises {
 
         System.out.println("Your sentence is: " + sentence);
 
-        double length;
-        double width;
-        double height;
-        double area;
-        double perimeter;
-        double volume;
+        double length, width, height, area, perimeter, volume;
 
 //      Calculate the area, perimeter, and volume of a room given the height and width.
-        System.out.println("Enter a room's length: ");
+        System.out.print("Enter a room's length: ");
         length = scan.nextDouble();
-        System.out.println("Enter a room's width: ");
+        System.out.print("Enter a room's width: ");
         width = scan.nextDouble();
-        System.out.println("Enter a room's height: ");
+        System.out.print("Enter a room's height: ");
         height = scan.nextDouble();
         scan.nextLine();
 
@@ -67,7 +60,7 @@ public class ConsoleExercises {
         favoriteQuote = scan.nextLine();
 
         System.out.println("Your favorite quote is: " + favoriteQuote);
-        System.out.println("How many words are in the quote?");
+        System.out.print("How many words are in the quote? ");
         wordCount = scan.nextInt();
 
         System.out.println("There are " + wordCount + " words in the quote.");

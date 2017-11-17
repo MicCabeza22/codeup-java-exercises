@@ -50,6 +50,7 @@ public class ConsoleExercises {
         width = scan.nextDouble();
         System.out.println("Enter a room's height: ");
         height = scan.nextDouble();
+        scan.nextLine();
 
         area = length * width;
         perimeter = 2 * (length + width);
@@ -58,5 +59,17 @@ public class ConsoleExercises {
         System.out.println("The area of the room is: " + area + " ft^2.");
         System.out.println("The perimeter of the room is: " + perimeter + " ft.");
         System.out.println("The volume of the room is: " + volume + " ft^3.");
+
+        String favoriteQuote;
+        int wordCount;
+
+        System.out.println("Enter your favorite quote: ");
+        favoriteQuote = scan.nextLine();
+
+        System.out.println("Your favorite quote is: " + favoriteQuote);
+        System.out.println("How many words are in the quote?");
+        wordCount = scan.nextInt();
+
+        System.out.println("There are " + wordCount + " words in the quote.");
     }
 }

@@ -3,22 +3,34 @@ import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int userInt;
+        int numericalGrade;
+        char letterGrade;
         String choice;
 
         do {
-            System.out.print("What number would you like to go up to? ");
-            userInt = scan.nextInt();
+            System.out.print("Enter a numerical grade from 0 to 100: ");
+            numericalGrade = scan.nextInt();
 
-            System.out.println("Here is a table of numbers and their squares and cubes:");
-            System.out.println("Number | Squared | Cubed");
-            System.out.println("------ | ------- | -----");
+            while (numericalGrade < 0 || numericalGrade > 100) {
+                System.out.print("Enter a numerical grade from 0 to 100: ");
+                numericalGrade = scan.nextInt();
+            }
 
-            for (int i = 1; i <= userInt; i++) {
-                System.out.println(i + "      | "
-                        + (int) Math.pow(i, 2)
-                        + "       | "
-                        + (int) Math.pow(i, 3));
+            if (numericalGrade > 87) {
+                letterGrade = 'A';
+                System.out.println("The letter grade is: " + letterGrade);
+            } else if (numericalGrade > 79) {
+                letterGrade = 'B';
+                System.out.println("The letter grade is: " + letterGrade);
+            } else if (numericalGrade > 66) {
+                letterGrade = 'C';
+                System.out.println("The letter grade is: " + letterGrade);
+            } else if (numericalGrade > 59) {
+                letterGrade = 'D';
+                System.out.println("The letter grade is: " + letterGrade);
+            } else {
+                letterGrade = 'F';
+                System.out.println("The letter grade is: " + letterGrade);
             }
 
             System.out.println("Would you like to continue? (YES/NO)");

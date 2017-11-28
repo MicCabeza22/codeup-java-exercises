@@ -55,5 +55,6 @@ public class Input {
             System.out.println("Please enter an integer: ");
             scanner.next();
             return getDouble();
-        }    }
+        }
+    }
 }

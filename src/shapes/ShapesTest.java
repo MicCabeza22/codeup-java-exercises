@@ -1,13 +1,17 @@
+/**
+ * Credit for missing/edited portions of code goes to Ryan Orsinger (ryanorsinger) on GitHub
+ */
+
 package shapes;
 
 public class ShapesTest {
     public static void main(String[] args) {
-        Rectangle box1 = new Rectangle(5, 4);
-        Rectangle box2 = new Square(5);
+        Measurable myShape = new Rectangle(12.21, 19.92);
+        System.out.println("Rectangle area: " + myShape.getArea());
+        System.out.println("Rectangle perimeter: " + myShape.getPerimeter());
 
-        System.out.println(box1.getArea());
-        System.out.println(box1.getPerimeter());
-        System.out.println(box2.getArea());
-        System.out.println(box2.getPerimeter());
+        myShape = new Square(66.67);
+        System.out.println("Square area: " + myShape.getArea());
+        System.out.println("Square perimeter: " + myShape.getPerimeter());
     }
 }

@@ -1,10 +1,14 @@
 package grades;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class GradesApplication {
     public static void main(String[] args) {
         HashMap<String, Object> students = new HashMap<>();
+        Scanner scan = new Scanner(System.in);
+        String userInput;
+        String userYesOrNo;
 
         Student james = new Student("James T. Kirk");
         james.addGrade(52);
@@ -30,5 +34,46 @@ public class GradesApplication {
         students.put("cheekibreeki", ivan.getName());
         students.put("numberOne", robbie.getName());
         students.put("MrPOTUS16", abraham.getName());
+
+        do {
+            System.out.println("Welcome!\n");
+            System.out.println("Here are the GitHub usernames of our students:\n");
+
+            for (String username : students.keySet()) {
+                System.out.printf("|%s| ", username);
+            }
+
+            System.out.println("\n\nWhat student would you like to see more information on?\n");
+            userInput = scan.nextLine();
+
+            switch (userInput) {
+                case "VagaJamesBond":
+                    System.out.printf("\nName: %s - GitHub username: %s%n", james.getName(), userInput);
+                    System.out.println("Current Average: " + james.getAverage());
+                    break;
+                case "cheekibreeki":
+                    System.out.printf("\nName: %s - GitHub username: %s%n", ivan.getName(), userInput);
+                    System.out.println("Current Average: " + ivan.getAverage());
+                    break;
+                case "numberOne":
+                    System.out.printf("\nName: %s - GitHub username: %s%n", robbie.getName(), userInput);
+                    System.out.println("Current Average: " + robbie.getAverage());
+                    break;
+                case "MrPOTUS16":
+                    System.out.printf("\nName: %s - GitHub username: %s%n", abraham.getName(), userInput);
+                    System.out.println("Current Average: " + abraham.getAverage());
+                    break;
+                default:
+                    System.out.printf("\nSorry, no student found with the GitHub username of \"%s\".%n", userInput);
+                    break;
+            }
+
+            System.out.println("\nWould you like to see another student? (Y/N)\n");
+            userYesOrNo = scan.nextLine();
+
+            if (userYesOrNo.equalsIgnoreCase("n")) {
+                System.out.println("\nGoodbye, and have a nice day!");
+            }
+        } while (userYesOrNo.equalsIgnoreCase("y"));
     }
 }
